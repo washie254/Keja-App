@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Property</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<div class="fab-container">
+    <ion-fab top right edge>
+       <button ion-fab mini (click)="addHouse()"><ion-icon name="add"></ion-icon></button>  
+    </ion-fab>
+   </div>
+
+<ion-content>
+
+
+ 
+
+ <ion-item *ngFor="let myhouse of myHouses$ | async" lines="none">
+    <ion-card>
+      <ion-item>
+        <p>Property: <ion-card-title>{{ myhouse.title }}</ion-card-title>  </p>
+      </ion-item>
+
+      <ion-card-content>
+       
+          Location: {{ myhouse.location }}<br>
+          Price:  {{ myhouse.price }}
+        
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear (click)="update(myhouse)">
+            <ion-icon name="ios-git-compare-outline"></ion-icon>
+            <div> Update </div>
+          </button>
+        </ion-col>
+
+        <ion-col>
+          <button ion-button clear  (click)="deleteHouse(myhouse.id)">
+            <ion-icon name="ios-trash-outline"></ion-icon>
+            <div> Delete </div>
+          </button>
+        </ion-col>
+    </ion-row>
+  </ion-card> 
+  </ion-item>
+
+  <!-- <ul> 
+    <li *ngFor="let myhouse of myHouses$ | async">{{ myhouse.title }} 
+      <button ion-button color="secondary" (click)="update(myhouse.id)">update</button>
+      <button ion-button (click)="deleteHouse(myhouse.id)">delete</button></li>
+  </ul> -->
+</ion-content>

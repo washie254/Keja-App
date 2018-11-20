@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Update Property</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div padding>
+        <form action="" [formGroup]="updateForm" (ngSubmit)="updateHouse(updateForm.value)">
+        <ion-row>
+            <ion-col>
+                <ion-list inset class="no-border">
+
+                    <ion-item>
+                        <ion-label>Title</ion-label>
+                        <ion-input formControlName="title" type="text" value="{{ houseTitle }}" ></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Rent</ion-label>
+                        <ion-input formControlName="rent" type="text" value="{{ houseRent }}"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Category</ion-label>
+                        <ion-input formControlName="category" type="text" value="{{ houseCategory }}"></ion-input>
+                    </ion-item>
+                    
+                    <ion-item>
+                        <ion-label>Location</ion-label>
+                        <ion-input formControlName="location" type="text" value="{{ houseLocation }}"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Status</ion-label>
+                        <ion-input formControlName="status" type="text" value="{{ houseStatus }}"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Description</ion-label>
+                      <ion-input formControlName="description" type="text" value="{{ houseDesc }}"></ion-input>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <button ion-button block type="submit">Update Property</button>
+            </ion-col>
+        </ion-row>
+        </form>
+    </div>
+
+</ion-content>

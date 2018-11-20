@@ -1,0 +1,66 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Saved Items</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="ios-bookmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding #item>
+      <ion-item>
+        <ion-thumbnail item-start>
+            <!-- {{house.imgUrl}} -->
+         <img src="assets/4.jpg">   
+        </ion-thumbnail>
+        <!-- {{house.title}} -->
+        <!-- {{house.location}} -->
+        Property 1
+      </ion-item>
+  
+      <ion-item-options side="right">
+        <button ion-button icon-only (click)="remove()">
+          <ion-icon name="ios-trash-outline"></ion-icon>
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+          <button ion-button icon-only (click)="remove()">
+            <ion-icon name="ios-trash-outline"></ion-icon>
+          </button>
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-list>
+    <ion-item-sliding #item>
+      <ion-item>
+        <ion-thumbnail item-start>
+            <!-- {{house.imgUrl}} -->
+         <img src="assets/3.jpg">   
+        </ion-thumbnail>
+        <!-- {{house.title}} -->
+        <!-- {{house.location}} -->
+        Property 2
+      </ion-item>
+  
+      <ion-item-options side="right">
+        <button ion-button icon-only (click)="remove()">
+          <ion-icon name="ios-trash-outline"></ion-icon>
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+          <button ion-button icon-only (click)="remove()">
+            <ion-icon name="ios-trash-outline"></ion-icon>
+          </button>
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Calculate Morgage</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Principal Amount:</ion-label>
+    <ion-input type="number" [(ngModel)]="p" clearInput></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Rate [%]</ion-label>
+    <ion-input type="number" [(ngModel)]="r" clearInput></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Number Of Payments:</ion-label>
+    <ion-input type="number" [(ngModel)]="n" clearInput></ion-input>
+  </ion-item>
+  
+  <button ion-button color="primary" block (click)="calculate()"> Calculate</button>
+  <!-- <button ion-button outline block (click)="clear()"> Clear </button> -->
+</ion-content>

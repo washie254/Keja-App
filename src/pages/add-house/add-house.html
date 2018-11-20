@@ -1,0 +1,73 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Add Property</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <form>
+        <ion-item>
+            <ion-input  type="file" class="form-control" id="image" (change)="uploadimg($event)"> </ion-input>
+        </ion-item>
+    </form>
+
+
+    <div padding>
+        <form action="" [formGroup]="house" (ngSubmit)="addHouse()">
+        <ion-row>
+            <ion-col>
+                <ion-list inset class="no-border">
+                    <ion-item>
+                        <ion-label floating>Title</ion-label>
+                        <ion-input formControlName="title" type="text"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>Price</ion-label>
+                        <ion-input formControlName="rent" type="text"></ion-input>
+                    </ion-item>
+                  
+                    <ion-item>
+                    <ion-label>Category</ion-label>
+                        <!-- <ion-input formControlName="category" type="text"></ion-input> -->
+                    <ion-select formControlName="category">
+                     <ion-option value="Rentals">Rentals</ion-option>
+                        <ion-option value="Lands">Lands</ion-option>
+                        <ion-option value="Appartments">Appartments</ion-option>
+                        <ion-option value="Buildings">Buildings</ion-option>
+                    </ion-select>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>Location</ion-label>
+                        <ion-input formControlName="location" type="text"></ion-input>
+                    </ion-item>
+
+                     <ion-item>
+                    <!-- <ion-label>Status</ion-label> -->
+                        <!-- <ion-input formControlName="category" type="text"></ion-input> -->
+                    <ion-select formControlName="status" placeholder="Status">
+                     <ion-option value="Available">Available</ion-option>
+                     <ion-option value="Not Available">Not Available</ion-option>
+    
+                    </ion-select>
+                    </ion-item>
+                    
+                    <ion-item>
+                      <ion-label floating>Description</ion-label>
+                      <ion-input formControlName="description" type="text"></ion-input>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <button ion-button block type="submit">Add Property</button>
+            </ion-col>
+        </ion-row>
+        </form>
+    </div>
+  
+</ion-content>

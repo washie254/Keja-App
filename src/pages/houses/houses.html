@@ -1,0 +1,64 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title *ngIf="!isSearchbarOpened">Home
+    </ion-title>
+    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchbarOpened=false"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only *ngIf="!isSearchbarOpened" (click)="isSearchbarOpened=true">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  
+  <ion-item *ngFor="let house of houses$ | async">
+    <ion-card text-wrap>
+      <ion-item>
+          <ion-card-title>{{ house.title }} </ion-card-title>
+      </ion-item>
+ 
+     <p text-right>
+        {{house.status}}
+       <ion-icon name='ios-briefcase-outline'></ion-icon>
+      </p>
+      
+      <img src="{{house.imgUrl}}">
+      <ion-card-content>
+          
+          Category: {{house.category}}<br>
+          Price:  {{house.price }}
+          
+        <p>{{house.description}}</p>
+      </ion-card-content>
+    
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small (click)="Location()">
+            <ion-icon name="map"></ion-icon>
+            <div> {{house.location}}</div>
+          </button>
+        </ion-col>
+       
+        <ion-col>
+          <button ion-button clear small (click)="chatFarmer(house.user_id)">
+            <ion-icon name="ios-chatboxes-outline" start></ion-icon>
+            <div>.  Enquire</div>
+          </button>
+        </ion-col>
+        <br>
+        <ion-col>
+          <button ion-button clear small>
+            <ion-icon name="ios-bookmark-outline" (click)="save()"> <strong>.  save</strong></ion-icon>
+            
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card> 
+  </ion-item>
+</ion-content>
