@@ -45,10 +45,10 @@ export class MyApp {
 
      this.pages = [
       { title: 'Home', component: TabsPage,  icon: 'ios-home-outline'},
-      { title: 'My Property', component: MyHousesPage,  icon: 'ios-basket-outline'}, 
-      { title: 'Saved Property', component: SavedPropertyPage,  icon: 'ios-bookmark-outline'}, 
+      { title: 'Reported emergencies', component: MyHousesPage,  icon: 'ios-medkit-outline'}, 
+      // { title: 'Saved Property', component: SavedPropertyPage,  icon: 'ios-bookmark-outline'}, 
       { title: 'Maps', component:GoogleMapComponent, icon:"ios-map-outline" },
-      { title: 'Morgage Calculator', component: CalculatorPage, icon:"ios-keypad-outline"},
+      // { title: 'Morgage Calculator', component: CalculatorPage, icon:"ios-keypad-outline"},
       { title: 'Contact Us', component: ContactPage,icon:"ios-contacts-outline"},
       { title: 'Chat', component: ChatsPage,  icon: 'ios-chatboxes-outline'}
     ];
